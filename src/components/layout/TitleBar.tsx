@@ -1,6 +1,15 @@
-import { Box, BoxProps, HStack, Text } from '@chakra-ui/react'
+import {
+  Box,
+  BoxProps,
+  Button,
+  ButtonGroup,
+  HStack,
+  Icon,
+  IconButton,
+  Text,
+} from '@chakra-ui/react'
 import Image from 'next/image'
-
+import { FaCaretLeft, FaCaretRight } from 'react-icons/fa6'
 interface Props extends BoxProps {}
 export default function TitleBar({ ...props }: Props) {
   return (
@@ -19,6 +28,7 @@ export default function TitleBar({ ...props }: Props) {
         zIndex={10}
         {...props}
       >
+        {/* Toolbar */}
         <HStack spacing={4}>
           <Image
             src="/images/vs-code.png"
@@ -32,7 +42,15 @@ export default function TitleBar({ ...props }: Props) {
             </Text>
           ))}
         </HStack>
-        <Box></Box>
+        {/* Search and nav */}
+        <HStack>
+          <ButtonGroup>
+            <IconButton aria-label="History Prev" icon={<FaCaretLeft />} />
+            <IconButton aria-label="History Next" icon={<FaCaretRight />} />
+          </ButtonGroup>
+					
+        </HStack>
+        {/* Controls */}
         <HStack>
           {rightIcons.map((icon) => (
             <Box

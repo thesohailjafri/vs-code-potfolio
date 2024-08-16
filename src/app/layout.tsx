@@ -17,7 +17,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <Box color={'primary.bgText'} height={'100vh'} overflowY={'hidden'}>
+          <Box
+            color={'primary.textColor'}
+            height={'100vh'}
+            overflowY={'hidden'}
+          >
             <TitleBar />
             <Flex
               id={'main-container'}

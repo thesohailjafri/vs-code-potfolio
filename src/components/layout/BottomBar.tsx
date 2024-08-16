@@ -13,14 +13,15 @@ export default function BottomBar({ ...props }: Props) {
         display={'flex'}
         alignItems={'center'}
         justifyContent={'space-between'}
-        bgColor={'blue.900'}
-        height={'35px'}
+        bgColor={'primary.bottomBarBg'}
+        _hover={{ bgColor: 'primary.bottomBarHoverBg' }}
+        height={'30px'}
         px={4}
         {...props}
       >
         Bottombar
       </Box>
-      <Box height={`33px`} />
+      <Box height={`30px`} />
     </>
   )
 }

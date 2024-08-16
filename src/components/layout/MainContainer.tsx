@@ -7,15 +7,18 @@ interface Props extends BoxProps {
 
 export default function MainContainer({ children, ...props }: Props) {
   return (
-    <Box
-      flex={1}
-      bgColor={'red.300'}
-      height={'full'}
-      overflowY={'auto'}
-      {...props}
-    >
+    <Box flex={1} {...props}>
       <TabsBar />
-      {children}
+      <Box
+        bgColor={'primary.mainBg'}
+        height={'full'}
+        overflowY={'auto'}
+        pt={4}
+        px={4}
+        pb={20}
+      >
+        {children}
+      </Box>
     </Box>
   )
 }

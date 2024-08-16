@@ -6,6 +6,7 @@ import BottomBar from '@/components/layout/BottomBar'
 import Sidebar from '@/components/layout/Sidebar'
 import Explorer from '@/components/layout/Explorer'
 import MainContainer from '@/components/layout/MainContainer'
+import theme from '@/styles/theme'
 
 export default function RootLayout({
   children,
@@ -16,12 +17,12 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <Box color={'white'} height={'100vh'} overflowY={'hidden'}>
+          <Box color={'primary.bgText'} height={'100vh'} overflowY={'hidden'}>
             <TitleBar />
             <Flex
               id={'main-container'}
               width={'100%'}
-              height={'calc(100% - 68px)'}
+              height={'calc(100% - 60px)'}
               overflowY={'hidden'}
             >
               <Sidebar />

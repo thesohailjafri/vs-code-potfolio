@@ -12,7 +12,7 @@ interface Props extends BoxProps {}
 
 export default function Sidebar({ ...props }: Props) {
   return (
-    <Box maxW={14} width={'10%'} bgColor={'red.500'} {...props}>
+    <Box maxW={14} width={'10%'} bgColor={'primary.sideBarBg'} {...props}>
       <Stack>
         {links.map((link, index) => (
           <Box key={index} px={3} py={2} _hover={{ bgColor: 'gray.700' }}>

@@ -13,9 +13,10 @@ export default function TitleBar({ ...props }: Props) {
         display={'flex'}
         alignItems={'center'}
         justifyContent={'space-between'}
-        bgColor={'blue.900'}
+        bgColor={'primary.titleBarBg'}
         height={'35px'}
         px={4}
+        zIndex={10}
         {...props}
       >
         <HStack spacing={4}>

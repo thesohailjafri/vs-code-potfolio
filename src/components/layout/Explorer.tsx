@@ -15,7 +15,7 @@ interface Props extends BoxProps {}
 
 export default function Explorer({ ...props }: Props) {
   return (
-    <Box maxW={300} width={'20%'} bgColor={'red.400'} {...props}>
+    <Box maxW={250} width={'20%'} bgColor={'primary.explorerBg'} {...props}>
       <Text>EXPLORER</Text>
       <Accordion>
         <AccordionItem>
@@ -35,12 +35,7 @@ export default function Explorer({ ...props }: Props) {
                 py={2}
                 _hover={{ bgColor: 'gray.700' }}
               >
-                <link.icon
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                  }}
-                />
+                <link.icon width={'1'} />
                 <Text>{link.title}</Text>
               </HStack>
             ))}

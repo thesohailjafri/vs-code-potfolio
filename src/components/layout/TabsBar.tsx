@@ -5,17 +5,23 @@ interface Props extends BoxProps {}
 
 export default function TabsBar({ ...props }: Props) {
   return (
-    <>
+    <Box position={'relative'}>
       <Box
-        position={'fixed'}
+        position={'absolute'}
         width={'full'}
-        height={10}
+        overflowX={'auto'}
         bgColor={'primary.tabsBarBg'}
         {...props}
       >
-        <HStack>
+        <HStack height={10} flexShrink={0}>
           {openFileLinks.map((link, index) => (
-            <HStack key={index} px={3} py={2} _hover={{ bgColor: 'gray.700' }}>
+            <HStack
+              key={index}
+              px={3}
+              py={2}
+              _hover={{ bgColor: 'gray.700' }}
+              flexShrink={0}
+            >
               <link.icon
                 style={{
                   width: '100%',
@@ -28,6 +34,6 @@ export default function TabsBar({ ...props }: Props) {
         </HStack>
       </Box>
       <Box height={10} />
-    </>
+    </Box>
   )
 }

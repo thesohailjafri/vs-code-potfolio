@@ -3,7 +3,7 @@ import { Box, Flex } from '@chakra-ui/react'
 import { Providers } from './providers'
 import TitleBar from '@/components/layout/TitleBar'
 import BottomBar from '@/components/layout/BottomBar'
-import Sidebar from '@/components/layout/Sidebar'
+import SideBar from '@/components/layout/SideBar'
 import Explorer from '@/components/layout/Explorer'
 import MainContainer from '@/components/layout/MainContainer'
 import theme from '@/styles/theme'
@@ -29,7 +29,7 @@ export default function RootLayout({
               height={'calc(100% - 60px)'}
               overflowY={'hidden'}
             >
-              <Sidebar />
+              <SideBar />
               <Explorer />
               <MainContainer>{children}</MainContainer>
             </Flex>

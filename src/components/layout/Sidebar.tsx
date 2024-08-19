@@ -10,7 +10,7 @@ import {
 
 interface Props extends BoxProps {}
 
-export default function Sidebar({ ...props }: Props) {
+export default function SideBar({ ...props }: Props) {
   return (
     <Box maxW={14} width={'10%'} bgColor={'primary.sideBarBg'} {...props}>
       <Stack>

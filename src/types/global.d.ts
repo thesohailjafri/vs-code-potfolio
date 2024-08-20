@@ -1,23 +1,33 @@
 export type ColorName =
+  // Main colors
   | 'mainBg'
   | 'bgText'
   | 'textColor'
   | 'accentColor'
+  // Title bar colors
   | 'titleBarBg'
+  | 'titleSearchBg'
+  | 'titleSearchBorder'
+  // Sidebar colors
   | 'sideBarBg'
   | 'sideBarHoverBg'
+  // Explorer colors
   | 'explorerBg'
   | 'explorerHoverBg'
   | 'explorerBorder'
+  // Tabs colors
   | 'tabsBg'
   | 'tabBg'
   | 'tabActiveBg'
   | 'tabBorder'
+  // Bottom bar colors
   | 'bottomBarBg'
   | 'bottomBarBorder'
+  | 'bottomBarHoverBg'
+  // Button colors
   | 'buttonBg'
   | 'buttonText'
-  | 'bottomBarHoverBg'
+  // Scrollbar colors
   | 'scrollbarTrackBg'
   | 'scrollbarThumbBg'
   | 'articleBg'

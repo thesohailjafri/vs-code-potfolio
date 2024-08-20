@@ -4,6 +4,22 @@ import { githubDarkTheme } from './themes'
 import { ColorName } from '@/types/global'
 
 const theme = {
+  styles: {
+    global: () => ({
+      '::-webkit-scrollbar': {
+        width: '10px',
+        height: '10px',
+      },
+      /* Track */
+      '::-webkit-scrollbar-track': {
+        background: 'primary.scrollbarTrackBg',
+      },
+      /* Handle */
+      '::-webkit-scrollbar-thumb': {
+        background: 'primary.scrollbarThumbBg',
+      },
+    }),
+  },
   config: {
     initialColorMode: 'system', // see https://chakra-ui.com/docs/styled-system/color-mode
     useSystemColorMode: true,

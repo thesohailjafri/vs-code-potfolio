@@ -1,26 +1,25 @@
 import { openFileLinks } from '@/utils/default'
-import { Box, BoxProps, HStack, Text } from '@chakra-ui/react'
-
+import { Box, BoxProps, HStack, Text, Link } from '@chakra-ui/react'
 interface Props extends BoxProps {}
 
 export default function TabsBar({ ...props }: Props) {
   return (
     <Box position={'relative'}>
-      <Box
-        position={'absolute'}
-        width={'full'}
-        overflowX={'auto'}
-        bgColor={'primary.tabsBarBg'}
-        {...props}
-      >
-        <HStack height={10} flexShrink={0}>
+      <Box position={'absolute'} width={'full'} overflowX={'auto'} {...props}>
+        <HStack height={10} flexShrink={0} spacing={0}>
           {openFileLinks.map((link, index) => (
             <HStack
               key={index}
+              as={Link}
+              href={link.href}
               px={3}
               py={2}
-              _hover={{ bgColor: 'gray.700' }}
               flexShrink={0}
+              bgColor={'primary.tabsBg'}
+              _hover={{
+                bgColor: 'primary.tabActiveBg',
+                textDecoration: 'none',
+              }}
             >
               <link.icon
                 style={{

@@ -1,16 +1,5 @@
 import { openFileLinks } from '@/utils/default'
-import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Box,
-  BoxProps,
-  HStack,
-  List,
-  Text,
-} from '@chakra-ui/react'
+import { Box, BoxProps, HStack, Link, List, Text } from '@chakra-ui/react'
 
 interface Props extends BoxProps {}
 
@@ -26,7 +15,17 @@ export default function Explorer({ ...props }: Props) {
       <Text>EXPLORER</Text>
       <List>
         {openFileLinks.map((link, index) => (
-          <HStack key={index} px={3} py={2} _hover={{ bgColor: 'gray.700' }}>
+          <HStack
+            key={index}
+            as={Link}
+            href={link.href}
+            px={3}
+            py={2}
+            _hover={{
+              bgColor: 'primary.explorerHoverBg',
+              textDecoration: 'none',
+            }}
+          >
             <link.icon width={'1'} />
             <Text>{link.title}</Text>
           </HStack>

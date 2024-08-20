@@ -76,11 +76,9 @@ export default function TitleBar({ ...props }: Props) {
                 variant={'unstyled'}
               ></MenuButton>
               <MenuList>
-                <MenuItem>Download</MenuItem>
-                <MenuItem>Create a Copy</MenuItem>
-                <MenuItem>Mark as Draft</MenuItem>
-                <MenuItem>Delete</MenuItem>
-                <MenuItem>Attend a Workshop</MenuItem>
+                {leftText.map((text) => (
+                  <MenuItem key={text}>{text}</MenuItem>
+                ))}
               </MenuList>
             </Menu>
           </Box>
@@ -108,7 +106,9 @@ export default function TitleBar({ ...props }: Props) {
             fontWeight={'normal'}
             fontSize={'sm'}
             gap={3}
-            border={'red 1px solid'}
+            border={'1px solid'}
+            bgColor={'primary.titleBarSearchBg'}
+            borderColor={'primary.titleBarSearchBorder'}
             width={'50vw'}
             maxWidth={'lg'}
             height={'28px'}

@@ -6,8 +6,8 @@ export type ColorName =
   | 'accentColor'
   // Title bar colors
   | 'titleBarBg'
-  | 'titleSearchBg'
-  | 'titleSearchBorder'
+  | 'titleBarSearchBg'
+  | 'titleBarSearchBorder'
   // Sidebar colors
   | 'sideBarBg'
   | 'sideBarHoverBg'

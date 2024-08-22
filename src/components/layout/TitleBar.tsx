@@ -1,4 +1,6 @@
 'use client'
+import { pageLinks } from '@/utils/default'
+import { Link } from '@chakra-ui/next-js'
 import {
   Box,
   BoxProps,
@@ -47,7 +49,7 @@ export default function TitleBar({ ...props }: Props) {
         alignItems={'center'}
         justifyContent={'space-between'}
         bgColor={'primary.titleBarBg'}
-        height={'35px'}
+        height={'40px'}
         px={4}
         zIndex={10}
         {...props}
@@ -99,23 +101,43 @@ export default function TitleBar({ ...props }: Props) {
               variant={'unstyled'}
             />
           </ButtonGroup>
-          <Button
-            onClick={onOpenSearch}
-            variant={'unstyled'}
-            display={'flex'}
-            fontWeight={'normal'}
-            fontSize={'sm'}
-            gap={3}
-            border={'1px solid'}
-            bgColor={'primary.titleBarSearchBg'}
-            borderColor={'primary.titleBarSearchBorder'}
-            width={'50vw'}
-            maxWidth={'lg'}
-            height={'28px'}
-          >
-            <Icon as={FaSearch} boxSize={3} />
-            <Text>TheSohailJafri</Text>
-          </Button>
+          <Menu>
+            <MenuButton
+              as={Button}
+              variant={'unstyled'}
+              fontWeight={'normal'}
+              fontSize={'sm'}
+              gap={3}
+              border={'1px solid'}
+              bgColor={'primary.titleBarSearchBg'}
+              borderColor={'primary.titleBarSearchBorder'}
+              width={'50vw'}
+              maxWidth={'lg'}
+              height={'28px'}
+            >
+              <HStack width={'100%'} justifyContent={'center'}>
+                <Icon as={FaSearch} boxSize={3} />
+                <Text>TheSohailJafri</Text>
+              </HStack>
+            </MenuButton>
+            <MenuList width={'50vw'} maxWidth={'lg'}>
+              {pageLinks.map((link, index) => (
+                <MenuItem
+                  key={index}
+                  as={Link}
+                  href={link.href}
+                  _hover={{
+                    textDecoration: 'none',
+                  }}
+                >
+                  <HStack>
+                    <link.icon width={'1'} />
+                    <Text>{link.title}</Text>
+                  </HStack>
+                </MenuItem>
+              ))}
+            </MenuList>
+          </Menu>
         </HStack>
         {/* Controls */}
         <HStack>
@@ -130,22 +152,7 @@ export default function TitleBar({ ...props }: Props) {
           ))}
         </HStack>
       </Box>
-      <Box height={`33px`} />
-      <Modal isOpen={isOpenSearch} onClose={onCloseSearch}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody></ModalBody>
-
-          <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onCloseSearch}>
-              Close
-            </Button>
-            <Button variant="ghost">Secondary Action</Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
+      <Box height={`40px`} />
     </>
   )
 }

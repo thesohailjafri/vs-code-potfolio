@@ -8,6 +8,8 @@ export type ColorName =
   | 'titleBarBg'
   | 'titleBarSearchBg'
   | 'titleBarSearchBorder'
+  // Bread crumb colors
+  | 'breadCrumbBg'
   // Sidebar colors
   | 'sideBarBg'
   | 'sideBarHoverBg'

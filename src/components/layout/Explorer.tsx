@@ -1,4 +1,4 @@
-import { openFileLinks } from '@/utils/default'
+import { pageLinks } from '@/utils/default'
 import { Box, BoxProps, HStack, Link, List, Text } from '@chakra-ui/react'
 
 interface Props extends BoxProps {}
@@ -12,9 +12,11 @@ export default function Explorer({ ...props }: Props) {
       hideBelow={'md'}
       {...props}
     >
-      <Text>EXPLORER</Text>
+      <Text fontSize={'sm'} px={3} py={2}>
+        EXPLORER
+      </Text>
       <List>
-        {openFileLinks.map((link, index) => (
+        {pageLinks.map((link, index) => (
           <HStack
             key={index}
             as={Link}
@@ -26,7 +28,7 @@ export default function Explorer({ ...props }: Props) {
               textDecoration: 'none',
             }}
           >
-            <link.icon width={'1'} />
+            <link.icon width={'1'} color={link.color} />
             <Text>{link.title}</Text>
           </HStack>
         ))}

@@ -117,7 +117,7 @@ export default function TitleBar({ ...props }: Props) {
             >
               <HStack width={'100%'} justifyContent={'center'}>
                 <Icon as={FaSearch} boxSize={3} />
-                <Text>TheSohailJafri</Text>
+                <Text>{window.location.hostname}</Text>
               </HStack>
             </MenuButton>
             <MenuList width={'50vw'} maxWidth={'lg'}>

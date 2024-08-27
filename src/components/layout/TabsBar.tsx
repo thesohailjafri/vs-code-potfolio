@@ -13,7 +13,7 @@ export default function TabsBar({ ...props }: Props) {
         width={'full'}
         overflowX={'auto'}
         bgColor={'primary.tabsBg'}
-        height={'35px'}
+        height={'40px'}
         display={'flex'}
         alignItems={'center'}
         {...props}
@@ -30,6 +30,7 @@ export default function TabsBar({ ...props }: Props) {
               as={Link}
               href={link.href}
               px={3}
+              py={1}
               flexShrink={0}
               _hover={{
                 textDecoration: 'none',
@@ -55,7 +56,7 @@ export default function TabsBar({ ...props }: Props) {
           ))}
         </HStack>
       </Box>
-      <Box height={'35px'} />
+      <Box height={'40px'} />
     </Box>
   )
 }

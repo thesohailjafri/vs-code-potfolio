@@ -18,6 +18,7 @@ export default function MainContainer({ children, ...props }: Props) {
         pt={4}
         px={4}
         pb={20}
+        fontSize={'lg'}
       >
         {children}
       </Box>

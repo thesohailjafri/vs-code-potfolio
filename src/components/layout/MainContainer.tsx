@@ -12,8 +12,8 @@ export default function MainContainer({ children, ...props }: Props) {
       <TabsBar />
       <BreadcrumbBar />
       <Box
-        bgColor={'primary.mainBg'}
         height={'full'}
+        width={'full'}
         overflowY={'auto'}
         pt={4}
         px={4}

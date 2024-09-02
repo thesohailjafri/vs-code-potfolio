@@ -10,6 +10,7 @@ export default function Explorer({ ...props }: Props) {
       width={'20%'}
       bgColor={'primary.explorerBg'}
       hideBelow={'md'}
+      fontFamily={'sans'}
       {...props}
     >
       <Text fontSize={'sm'} px={3} py={2}>
@@ -22,13 +23,13 @@ export default function Explorer({ ...props }: Props) {
             as={Link}
             href={link.href}
             px={3}
-            py={2}
+            py={1}
             _hover={{
               bgColor: 'primary.explorerHoverBg',
               textDecoration: 'none',
             }}
           >
-            <link.icon width={'1'} color={link.color} />
+            <link.icon size={16} color={link.color} />
             <Text>{link.title}</Text>
           </HStack>
         ))}

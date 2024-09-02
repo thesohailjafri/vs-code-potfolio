@@ -19,6 +19,7 @@ export default function RootLayout({
         <Providers>
           <Box
             color={'primary.textColor'}
+            bgColor={'primary.mainBg'}
             height={'100vh'}
             overflowY={'hidden'}
           >

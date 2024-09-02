@@ -10,7 +10,7 @@ interface Props extends BoxProps {}
 
 export default function BreadcrumbBar({ ...props }: Props) {
   return (
-    <Box position={'relative'}>
+    <Box position={'relative'} fontFamily={'sans'}>
       <Box
         position={'absolute'}
         width={'full'}

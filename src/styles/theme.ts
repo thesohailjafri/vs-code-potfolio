@@ -2,8 +2,21 @@
 import { extendTheme, withDefaultColorScheme } from '@chakra-ui/react'
 import { githubDarkTheme } from './themes'
 import { ColorName } from '@/types/global'
-
+import { Source_Sans_3, JetBrains_Mono } from 'next/font/google'
+const defaultFont = JetBrains_Mono({
+  weight: ['400', '700', '800'],
+  subsets: ['latin'],
+})
+const sourceSans = Source_Sans_3({
+  weight: ['400', '800'],
+  subsets: ['latin'],
+})
 const theme = {
+  fonts: {
+    heading: defaultFont.style.fontFamily,
+    body: defaultFont.style.fontFamily,
+    sans: sourceSans.style.fontFamily,
+  },
   styles: {
     global: () => ({
       '::-webkit-scrollbar': {

@@ -7,7 +7,7 @@ interface Props extends BoxProps {}
 export default function TabsBar({ ...props }: Props) {
   const { pageSlug } = usePage()
   return (
-    <Box position={'relative'}>
+    <Box position={'relative'} fontFamily={'sans'}>
       <Box
         position={'absolute'}
         width={'full'}
@@ -44,13 +44,7 @@ export default function TabsBar({ ...props }: Props) {
               }
               height={'full'}
             >
-              <link.icon
-                color={link.color}
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                }}
-              />
+              <link.icon color={link.color} size={16} />
               <Text>{link.title}</Text>
             </HStack>
           ))}

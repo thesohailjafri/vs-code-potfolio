@@ -20,6 +20,8 @@ export default function BottomBar({ ...props }: Props) {
         alignItems={'center'}
         justifyContent={'space-between'}
         bgColor={'primary.bottomBarBg'}
+        borderTop={'1px solid'}
+        borderColor={'primary.bottomBarBorder'}
         height={'30px'}
         px={4}
         fontSize={'xs'}

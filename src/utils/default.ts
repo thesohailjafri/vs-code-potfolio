@@ -51,17 +51,17 @@ export const pageLinks = [
     color: '#42A5F5',
   },
   {
-    slug: 'github',
-    title: 'github.md',
-    icon: FaMarkdown,
-    href: getPath.github,
-    color: '#42A5F5',
-  },
-  {
     slug: 'services',
     title: 'services.d.ts',
     icon: TbBrandTypescript,
     href: getPath.services,
+    color: '#42A5F5',
+  },
+  {
+    slug: 'github',
+    title: 'github.md',
+    icon: FaMarkdown,
+    href: getPath.github,
     color: '#42A5F5',
   },
 ]

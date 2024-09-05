@@ -22,7 +22,7 @@ export const githubDarkTheme: AppTheme = {
       tabBg: '#1f2428',
       tabActiveBg: '#24292e',
       tabBorder: '#24292e',
-      bottomBarBg: '#24292e',
+      bottomBarBg: '#1b1f23',
       bottomBarBorder: '#1b1f23',
       bottomBarHoverBg: '#4f4f52',
       buttonBg: '#176f2c',

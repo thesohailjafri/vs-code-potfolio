@@ -11,16 +11,19 @@ import {
 } from '@chakra-ui/react'
 import { Link } from '@chakra-ui/next-js'
 import { Box } from '@chakra-ui/react'
-import { SVGProps, useEffect, useState } from 'react'
+import { SVGProps, useEffect, useMemo, useState } from 'react'
 
 export default function Page() {
   // single word course names
-  const typeWriterValues = [
-    'Full Stack Web Developer',
-    'Content Creator',
-    'Bike Enthusiast',
-    'Gym Rat',
-  ]
+  const typeWriterValues = useMemo(
+    () => [
+      'Full Stack Web Developer',
+      'Content Creator',
+      'Bike Enthusiast',
+      'Gym Rat',
+    ],
+    [],
+  )
   const [typeWriterText, setTypeWriterText] = useState<string>('')
 
   useEffect(() => {
@@ -54,7 +57,7 @@ export default function Page() {
     return () => {
       clearInterval(interval)
     }
-  }, [])
+  }, [typeWriterValues])
   return (
     <Box position={'relative'} height={'full'} width={'full'}>
       <Box
@@ -90,6 +93,8 @@ export default function Page() {
           xl: 'center',
         }}
         gap={10}
+        pb={30}
+        px={30}
         flexDirection={'column'}
       >
         <Stack spacing={1}>
@@ -108,7 +113,7 @@ export default function Page() {
             {typeWriterText}
           </Heading>
         </Stack>
-        <ButtonGroup>
+        <ButtonGroup gap={2}>
           <Button as={Link} href="/projects" variant={'accent-filled'}>
             View Work
           </Button>

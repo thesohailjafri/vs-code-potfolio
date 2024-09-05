@@ -11,9 +11,50 @@ import {
 } from '@chakra-ui/react'
 import { Link } from '@chakra-ui/next-js'
 import { Box } from '@chakra-ui/react'
-import { SVGProps } from 'react'
+import { SVGProps, useEffect, useState } from 'react'
 
 export default function Page() {
+  // single word course names
+  const typeWriterValues = [
+    'Full Stack Web Developer',
+    'Content Creator',
+    'Bike Enthusiast',
+    'Gym Rat',
+  ]
+  const [typeWriterText, setTypeWriterText] = useState<string>('')
+
+  useEffect(() => {
+    let speed = 130
+    let placeholderTextIndex = 0
+    let textIndex = 0
+    let isBackward = false
+    // if(textIndex===0 || textIndex===text.length){
+    const interval = setInterval(() => {
+      let text = `  ${typeWriterValues[placeholderTextIndex]}  `
+
+      if (textIndex === text.length) {
+        isBackward = true
+      } else if (textIndex === 0) {
+        isBackward = false
+      }
+      if (isBackward) {
+        textIndex--
+        if (textIndex === 0) {
+          placeholderTextIndex++
+          if (placeholderTextIndex === typeWriterValues.length) {
+            placeholderTextIndex = 0
+          }
+        }
+      } else {
+        textIndex++
+      }
+
+      setTypeWriterText(text.slice(0, textIndex).trim())
+    }, speed)
+    return () => {
+      clearInterval(interval)
+    }
+  }, [])
   return (
     <Box position={'relative'} height={'full'} width={'full'}>
       <Box
@@ -32,9 +73,9 @@ export default function Page() {
           fontSize={{ base: '5rem', md: '10rem', lg: '15rem', xl: '20rem' }}
           fontFamily={'sans'}
         >
-          I BUILD
+          I WEAR
           <br />
-          WEBSITES
+          MANY HATS
         </Text>
       </Box>
 
@@ -48,10 +89,10 @@ export default function Page() {
           base: 'start',
           xl: 'center',
         }}
-        gap={20}
+        gap={10}
         flexDirection={'column'}
       >
-        <Stack spacing={4}>
+        <Stack spacing={1}>
           <Heading
             as="h1"
             fontSize={{
@@ -63,15 +104,15 @@ export default function Page() {
           >
             Sohail Jafri
           </Heading>
-          <Heading as="h6" fontWeight={'normal'}>
-            Full Stack Web Developer
+          <Heading as="h6" fontWeight={'normal'} height={8}>
+            {typeWriterText}
           </Heading>
         </Stack>
         <ButtonGroup>
-          <Button as={Link} href="/projects">
+          <Button as={Link} href="/projects" variant={'accent-filled'}>
             View Work
           </Button>
-          <Button as={Link} href="/contact">
+          <Button as={Link} href="/contact" variant={'accent-outlined'}>
             Contact Me
           </Button>
         </ButtonGroup>

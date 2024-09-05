@@ -38,6 +38,37 @@ const theme = {
     useSystemColorMode: true,
   },
   colors: githubDarkTheme.colors,
+  components: {
+    Button: {
+      variants: {
+        'accent-filled': {
+          borderRadius: 'md',
+          border: '2px solid',
+          borderColor: 'primary.accentColor',
+          bgColor: 'primary.accentColor',
+          color: 'primary.textColor',
+          px: [6, 8],
+          py: [2, 4],
+          fontSize: ['md', 'lg'],
+          _hover: {
+            textDecoration: 'none',
+          },
+        },
+        'accent-outlined': {
+          borderRadius: 'md',
+          border: '2px solid',
+          borderColor: 'primary.accentColor',
+          color: 'primary.textColor',
+          px: [6, 8],
+          py: [2, 4],
+          fontSize: ['md', 'lg'],
+          _hover: {
+            textDecoration: 'none',
+          },
+        },
+      },
+    },
+  },
   // We define a semanticTokens.colors object where we name our tokens and point our colors
   semanticTokens: {
     colors: {

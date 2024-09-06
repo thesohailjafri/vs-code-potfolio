@@ -1,8 +1,8 @@
 // theme.ts
-import { extendTheme, withDefaultColorScheme } from '@chakra-ui/react'
-import { githubDarkTheme } from './themes'
 import { ColorName } from '@/types/type'
-import { Source_Sans_3, JetBrains_Mono } from 'next/font/google'
+import { extendTheme } from '@chakra-ui/react'
+import { JetBrains_Mono, Source_Sans_3 } from 'next/font/google'
+import { githubDarkTheme } from './themes'
 const defaultFont = JetBrains_Mono({
   weight: ['400', '700', '800'],
   subsets: ['latin'],

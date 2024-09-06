@@ -1,40 +1,52 @@
-// app/page.tsx
 'use client'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import GitHubCalendar from 'react-github-calendar'
 import RepoCard from '../components/RepoCard'
 import { Link } from '@chakra-ui/next-js'
 
-export async function getStaticProps() {
-  const userRes = await fetch(
-    `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`,
-    {
-      headers: {
-        Authorization: `token ${process.env.GITHUB_API_KEY}`,
-      },
-    },
-  )
-  const user = await userRes.json()
-
-  const repoRes = await fetch(
-    `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}/repos?per_page=100`,
-    {
-      headers: {
-        Authorization: `token ${process.env.GITHUB_API_KEY}`,
-      },
-    },
-  )
-  let repos = await repoRes.json()
-  repos = repos
-    .sort((a, b) => b.stargazers_count - a.stargazers_count)
-    .slice(0, 6)
-
-  return {
-    props: { title: 'GitHub', repos, user },
-    revalidate: 10,
-  }
-}
 export default function Page() {
+  const [user, setUser] = useState(null)
+  const [repos, setRepos] = useState([])
+  const theme = {
+    dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
+  }
+  // Fetch GitHub data when the component mounts
+  useEffect(() => {
+    async function fetchGitHubData() {
+      // Fetch user data
+      const userRes = await fetch(
+        `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`,
+        {
+          headers: {
+            Authorization: `token ${process.env.GITHUB_API_KEY}`,
+          },
+        },
+      )
+      const userData = await userRes.json()
+      setUser(userData)
+
+      // Fetch repositories and sort them
+      const repoRes = await fetch(
+        `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}/repos?per_page=100`,
+        {
+          headers: {
+            Authorization: `token ${process.env.GITHUB_API_KEY}`,
+          },
+        },
+      )
+      let reposData = await repoRes.json()
+      reposData = reposData
+        .sort((a, b) => b.stargazers_count - a.stargazers_count)
+        .slice(0, 6)
+      setRepos(reposData)
+    }
+
+    fetchGitHubData()
+  }, [])
+
+  if (!user) return <div>Loading...</div>
+
   return (
     <>
       <div>

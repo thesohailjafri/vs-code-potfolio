@@ -1,4 +1,4 @@
-import { AppTheme } from '@/types/global'
+import { AppTheme } from '@/types/type'
 
 export const githubDarkTheme: AppTheme = {
   id: 'github-dark',

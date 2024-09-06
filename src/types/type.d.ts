@@ -41,3 +41,14 @@ export interface AppTheme {
     primary: Record<ColorName, string>
   }
 }
+
+export type Repo = {
+  id: number
+  name: string
+  description: string
+  watchers: number
+  forks: number
+  stargazers_count: number
+  html_url: string
+  homepage: string
+}

@@ -55,16 +55,16 @@ const aboutItems = [
 export default function Page() {
   return (
     <Box>
-      <Text color="primary.accentColor">&#123;</Text>
+      <Text color="var(--accent-color)">&#123;</Text>
       {aboutItems.slice(0, 8).map((item, index) => (
         <Text key={index}>
-          <Text as="span" color="primary.accentColor">
+          <Text as="span" color="var(--accent-color)">
             &nbsp;&nbsp;&nbsp;{item.social}:{' '}
           </Text>
           <Text as="span">{item.link}</Text>;
         </Text>
       ))}
-      <Text color="primary.accentColor">&#125;</Text>
+      <Text color="var(--accent-color)">&#125;</Text>
     </Box>
   )
 }

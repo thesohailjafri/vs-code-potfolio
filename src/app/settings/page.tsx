@@ -90,6 +90,7 @@ const ThemeInfo = ({
   theme,
   description,
 }: ThemeInfoProps) => {
+  // Save the theme to local storage
   const setTheme = (theme: string) => {
     document.documentElement.setAttribute('data-theme', theme)
     localStorage.setItem('theme', theme)
@@ -116,7 +117,7 @@ const ThemeInfo = ({
             size={'sm'}
             onClick={() => setTheme(theme)}
           >
-            Apply Install
+            Apply Theme
           </Button>
         </Box>
       </Box>

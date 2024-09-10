@@ -45,7 +45,7 @@ export default function BreadcrumbBar({ ...props }: Props) {
         display={'flex'}
         alignItems={'center'}
         fontSize={'sm'}
-        bgColor={'primary.breadCrumbBg'}
+        bgColor={'var(--breadcrumb-bg)'}
         {...props}
       >
         <Breadcrumb separator={<FaChevronRight opacity={0.5} />} px={3}>

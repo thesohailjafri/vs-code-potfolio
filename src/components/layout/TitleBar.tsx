@@ -48,7 +48,7 @@ export default function TitleBar({ ...props }: Props) {
         display={'flex'}
         alignItems={'center'}
         justifyContent={'space-between'}
-        bgColor={'primary.titleBarBg'}
+        bgColor={'var(--titlebar-bg)'}
         height={'40px'}
         px={4}
         zIndex={10}
@@ -109,8 +109,8 @@ export default function TitleBar({ ...props }: Props) {
               fontSize={'sm'}
               gap={3}
               border={'1px solid'}
-              bgColor={'primary.titleBarSearchBg'}
-              borderColor={'primary.titleBarSearchBorder'}
+              bgColor={'var(--titlebar-search-bg)'}
+              borderColor={'var(--titlebar-search-border)'}
               width={'50vw'}
               maxWidth={'lg'}
               height={'28px'}

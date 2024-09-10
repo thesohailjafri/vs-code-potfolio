@@ -58,7 +58,7 @@ export default function Page() {
       >
         <GridItem>
           <Text>
-            <Text as="span" color="primary.accentColor">
+            <Text as="span" color="var(--accent-color)">
               .socials
             </Text>{' '}
             &#123;
@@ -70,7 +70,7 @@ export default function Page() {
                 href={item.href}
                 target="_blank"
                 rel="noopener"
-                color={'primary.accentColor'}
+                color={'var(--accent-color)'}
               >
                 {item.link}
               </Link>

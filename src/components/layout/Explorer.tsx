@@ -8,7 +8,7 @@ export default function Explorer({ ...props }: Props) {
     <Box
       maxW={250}
       width={'20%'}
-      bgColor={'primary.explorerBg'}
+      bgColor={'var(--explorer-bg)'}
       hideBelow={'md'}
       fontFamily={'sans'}
       {...props}
@@ -25,7 +25,7 @@ export default function Explorer({ ...props }: Props) {
             px={3}
             py={1}
             _hover={{
-              bgColor: 'primary.explorerHoverBg',
+              bgColor: 'var(--primary-explorer-bg)',
               textDecoration: 'none',
             }}
           >

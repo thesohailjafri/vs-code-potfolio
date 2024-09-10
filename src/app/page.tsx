@@ -63,7 +63,7 @@ export default function Page() {
       <Box
         id="background"
         lineHeight={'1'}
-        color={'primary.bgText'}
+        color={'var(--bg-text)'}
         position={'absolute'}
         fontWeight={'bold'}
         zIndex={1}

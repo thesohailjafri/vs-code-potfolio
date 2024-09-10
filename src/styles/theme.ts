@@ -25,11 +25,11 @@ const theme = {
       },
       /* Track */
       '::-webkit-scrollbar-track': {
-        background: 'primary.scrollbarTrackBg',
+        background: 'var(--scrollbar-track-bg)',
       },
       /* Handle */
       '::-webkit-scrollbar-thumb': {
-        background: 'primary.scrollbarThumbBg',
+        background: 'var(--scrollbar-thumb-bg)',
       },
     }),
   },
@@ -44,9 +44,9 @@ const theme = {
         'accent-filled': {
           borderRadius: 'md',
           border: '2px solid',
-          borderColor: 'primary.accentColor',
-          bgColor: 'primary.accentColor',
-          color: 'primary.textColor',
+          borderColor: 'var(--accent-color)',
+          bgColor: 'var(--accent-color)',
+          color: 'var(--text-color)',
           px: [6, 8],
           py: [2, 4],
           fontSize: ['md', 'lg'],
@@ -57,8 +57,8 @@ const theme = {
         'accent-outlined': {
           borderRadius: 'md',
           border: '2px solid',
-          borderColor: 'primary.accentColor',
-          color: 'primary.textColor',
+          borderColor: 'var(--accent-color)',
+          color: 'var(--accent-color)',
           px: [6, 8],
           py: [2, 4],
           fontSize: ['md', 'lg'],
@@ -68,33 +68,6 @@ const theme = {
         },
       },
     },
-  },
-  // We define a semanticTokens.colors object where we name our tokens and point our colors
-  semanticTokens: {
-    colors: {
-      mainBg: 'primary.mainBg',
-      bgText: 'primary.bgText',
-      textColor: 'primary.textColor',
-      accentColor: 'primary.accentColor',
-      titleBarBg: 'primary.titleBarBg',
-      sideBarBg: 'primary.sideBarBg',
-      sideBarHoverBg: 'primary.sideBarHoverBg',
-      explorerBg: 'primary.explorerBg',
-      explorerHoverBg: 'primary.explorerHoverBg',
-      explorerBorder: 'primary.explorerBorder',
-      tabsBg: 'primary.tabsBg',
-      tabBg: 'primary.tabBg',
-      tabActiveBg: 'primary.tabActiveBg',
-      tabBorder: 'primary.tabBorder',
-      bottomBarBg: 'primary.bottomBarBg',
-      bottomBarBorder: 'primary.bottomBarBorder',
-      buttonBg: 'primary.buttonBg',
-      buttonText: 'primary.buttonText',
-      bottomBarHoverBg: 'primary.bottomBarHoverBg',
-      scrollbarTrackBg: 'primary.scrollbarTrackBg',
-      scrollbarThumbBg: 'primary.scrollbarThumbBg',
-      articleBg: 'primary.articleBg',
-    } as Record<ColorName, string>,
   },
 }
 

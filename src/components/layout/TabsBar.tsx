@@ -12,7 +12,7 @@ export default function TabsBar({ ...props }: Props) {
         position={'absolute'}
         width={'full'}
         overflowX={'auto'}
-        bgColor={'primary.tabsBg'}
+        bgColor={'var(--tabs-bg)'}
         height={'40px'}
         display={'flex'}
         alignItems={'center'}
@@ -37,10 +37,10 @@ export default function TabsBar({ ...props }: Props) {
               }}
               borderTop={'2px solid'}
               borderColor={
-                pageSlug === link.slug ? 'primary.accentColor' : 'transparent'
+                pageSlug === link.slug ? 'var(--accent-color)' : 'transparent'
               }
               bgColor={
-                pageSlug === link.slug ? 'primary.tabActiveBg' : 'transparent'
+                pageSlug === link.slug ? 'var(--tab-active-bg)' : 'transparent'
               }
               height={'full'}
             >

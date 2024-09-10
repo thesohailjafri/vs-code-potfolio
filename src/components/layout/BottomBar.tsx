@@ -19,9 +19,9 @@ export default function BottomBar({ ...props }: Props) {
         display={'flex'}
         alignItems={'center'}
         justifyContent={'space-between'}
-        bgColor={'primary.bottomBarBg'}
+        bgColor={'var(--bottombar-bg)'}
         borderTop={'1px solid'}
-        borderColor={'primary.bottomBarBorder'}
+        borderColor={'var(--bottombar-border)'}
         height={'30px'}
         px={4}
         fontSize={'xs'}
@@ -39,7 +39,7 @@ export default function BottomBar({ ...props }: Props) {
               px={1}
               height={'full'}
               href={'#'}
-              _hover={{ bgColor: 'primary.bottomBarHoverBg' }}
+              _hover={{ bgColor: 'var(--bottombar-hover-bg)' }}
             >
               <IoGitBranchOutline />
               <Text>Main</Text>
@@ -47,7 +47,7 @@ export default function BottomBar({ ...props }: Props) {
             <HStack
               px={1}
               height={'full'}
-              _hover={{ bgColor: 'primary.bottomBarHoverBg' }}
+              _hover={{ bgColor: 'var(--bottombar-hover-bg)' }}
             >
               {leftItems.map((item, index) => (
                 <HStack key={index}>
@@ -63,7 +63,7 @@ export default function BottomBar({ ...props }: Props) {
                 key={index}
                 px={1}
                 height={'full'}
-                _hover={{ bgColor: 'primary.bottomBarHoverBg' }}
+                _hover={{ bgColor: 'var(--bottombar-hover-bg)' }}
               >
                 <item.icon />
                 <Text>{item.value}</Text>

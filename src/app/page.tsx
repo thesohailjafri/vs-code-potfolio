@@ -4,6 +4,7 @@ import {
   Button,
   ButtonGroup,
   chakra,
+  Flex,
   Heading,
   HTMLChakraProps,
   Stack,
@@ -73,8 +74,10 @@ export default function Page() {
         flexDirection={'column'}
       >
         <Text
-          fontSize={{ base: '5rem', md: '10rem', lg: '15rem', xl: '20rem' }}
+          hideBelow={'lg'}
+          fontSize={{ lg: '10rem', xl: '14rem', '2xl': '18rem' }}
           fontFamily={'sans'}
+          fontWeight={'black'}
         >
           I WEAR
           <br />
@@ -101,26 +104,34 @@ export default function Page() {
           <Heading
             as="h1"
             fontSize={{
-              base: '3xl',
-              md: '4xl',
-              lg: '5xl',
-              xl: '8xl',
+              base: '4xl',
+              md: '6xl',
+              lg: '8xl',
             }}
           >
             Sohail Jafri
           </Heading>
-          <Heading as="h6" fontWeight={'normal'} height={8}>
+          <Heading
+            as="h6"
+            fontSize={{
+              base: 'xl',
+              md: '2xl',
+              lg: '3xl',
+            }}
+            fontWeight={'normal'}
+            height={{ base: 16, sm: 8 }}
+          >
             {typeWriterText}
           </Heading>
         </Stack>
-        <ButtonGroup gap={2}>
+        <Flex gap={2} flexWrap={'wrap'}>
           <Button as={Link} href="/projects" variant={'accent-filled'}>
             View Work
           </Button>
           <Button as={Link} href="/contact" variant={'accent-outlined'}>
             Contact Me
           </Button>
-        </ButtonGroup>
+        </Flex>
       </Box>
       <HeroIllustration />
     </Box>
@@ -134,10 +145,12 @@ const HeroIllustration = () => {
       bottom="0"
       right="0"
       transform={{
-        base: 'scale(0.5)',
+        base: 'scale(0.55)',
+        sm: 'scale(0.65)',
         md: 'scale(0.75)',
-        lg: 'scale(1)',
-        xl: 'scale(1.25)',
+        lg: 'scale(0.85)',
+        xl: 'scale(1)',
+        '2xl': 'scale(1.25)',
       }}
       transformOrigin="bottom right"
       zIndex={2}

@@ -108,9 +108,9 @@ export default function TitleBar({ ...props }: Props) {
               fontWeight={'normal'}
               fontSize={'sm'}
               gap={3}
-              border={'1px solid'}
               bgColor={'var(--titlebar-search-bg)'}
-              borderColor={'var(--titlebar-search-border)'}
+              border={'1px solid'}
+              borderColor={'var(--accent-color)'}
               width={'50vw'}
               maxWidth={'lg'}
               height={'28px'}

@@ -8,7 +8,7 @@ const defaultFont = JetBrains_Mono({
   subsets: ['latin'],
 })
 const sourceSans = Source_Sans_3({
-  weight: ['400', '800'],
+  weight: ['400', '900'],
   subsets: ['latin'],
 })
 const theme = {
